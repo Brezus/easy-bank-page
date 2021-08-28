@@ -378,3 +378,13 @@ small {
   color: var(--Light-Grayish-Blue);
   opacity: var(--opacity3);
 }
+@media screen and (min-width: 450px) {
+  .first-section__text h1 {
+    padding-top: 5rem;
+  }
+}
+@media screen and (min-width: 550px) {
+  .first-section__text h1 {
+    padding-top: 11rem;
+  }
+}
