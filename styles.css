@@ -212,8 +212,8 @@ section {
 
 .first-section {
   background-color: var(--Very-Light-Gray);
-  background-image: url(\images\image-mockups.png),
-    url(\images\bg-intro-mobile.svg);
+  background-image: url(images/image-mockups.png),
+    url(/images/bg-intro-mobile.svg);
   background-repeat: no-repeat, no-repeat;
   background-size: 90%, contain;
   background-position: top -8.8rem center, top -5rem center;
@@ -286,7 +286,7 @@ section {
 .second-section-column3:after,
 .second-section-column4:after {
   content: "";
-  background-image: url(\images\icon-online.svg);
+  background-image: url(/images/icon-online.svg);
   background-repeat: no-repeat;
   position: absolute;
   top: -3rem;
@@ -297,14 +297,14 @@ section {
 }
 
 .second-section-column2:after {
-  background-image: url(\images\icon-budgeting.svg);
+  background-image: url(/images/icon-budgeting.svg);
 }
 .second-section-column3:after {
-  background-image: url(\images\icon-onboarding.svg);
+  background-image: url(/images/icon-onboarding.svg);
 }
 
 .second-section-column4:after {
-  background-image: url(\images\icon-api.svg);
+  background-image: url(/images/icon-api.svg);
 }
 
 .third-section-grid {
