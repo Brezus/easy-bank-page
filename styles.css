@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
 :root {
   --Dark-Blue: hsl(233, 26%, 24%);
   --Lime-Green: hsl(136, 65%, 51%);
@@ -6,6 +7,14 @@
   --Light-Grayish-Blue: hsl(220, 16%, 96%);
   --Very-Light-Gray: hsl(0, 0%, 98%);
   --White: hsl(0, 0%, 100%);
+  --ff: "Public Sans", sans-serif;
+  --fws: 300;
+  --fwm: 400;
+  --fwl: 700;
+  --opacity1: 0.9;
+  --opacity2: 0.5;
+  --opacity3: 0.43;
+  --opacity4: 0.23;
 }
 /* Box sizing rules */
 *,
@@ -45,6 +54,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: 1.125rem;
+  font-family: var(--ff);
 }
 
 /* A elements that don't have a class get default styles */
@@ -84,7 +94,50 @@ select {
 }
 /* end of resets */
 p {
-  opacity: 0.5;
+  opacity: var(--opacity2);
+  font-weight: var(--fws);
+}
+.first-section h1 {
+  font-weight: var(--fwm);
+  color: var(--Dark-Blue);
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.first-section__text p {
+  margin: 30px 0;
+}
+.second-section h2 {
+  font-weight: var(--fws);
+  color: var(--Dark-Blue);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.second-section p {
+  /* margin: 20px 0; */
+  opacity: var(--opacity3);
+  font-size: 1rem;
+}
+.second-section h3 {
+  color: var(--Dark-Blue);
+  font-weight: var(--fws);
+  opacity: var(--opacity1);
+}
+.third-section-h3 h3 {
+  padding: 4rem 0 1rem;
+  color: var(--Dark-Blue);
+  font-weight: var(--fwm);
+  font-size: 1.5rem;
+  background-color: var(--Very-Light-Gray);
+}
+.article-text h3 {
+  color: var(--Dark-Blue);
+  font-weight: var(--fws);
+  font-size: 1.2rem;
+  opacity: var(--opacity1);
+}
+.small-p {
+  font-size: 0.8rem;
+  opacity: var(--opacity4);
 }
 nav {
   width: 85%;
@@ -196,16 +249,16 @@ section {
   width: 90%;
   margin: 0 auto;
 }
-.first-section__text p {
-  margin: 30px 0;
-}
 
-.first-button {
+.first-button,
+.last-button {
   background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
   border: none;
-  padding: 0.5rem 2.5rem;
+  padding: 0.7rem 2.5rem;
   color: var(--Very-Light-Gray);
   border-radius: 30px;
+  font-weight: var(-fwl);
+  font-size: 0.9rem;
 }
 
 .first-section {
@@ -217,18 +270,21 @@ section {
 .second-section-grid {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
-  grid-gap: 9rem;
-  padding: 7rem 0;
+  grid-gap: 5.5rem;
+  padding: 5rem 0 3rem;
   place-items: center;
   width: 90%;
   margin: 0 auto;
 }
 .spacing {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 20px;
   position: relative;
 }
-.second-section-column1:after {
+.second-section-column1:after,
+.second-section-column2:after,
+.second-section-column3:after,
+.second-section-column4:after {
   content: "";
   background-image: url(/easybank-landing-page-master/images/icon-online.svg);
   background-repeat: no-repeat;
@@ -239,37 +295,90 @@ section {
   height: 5rem;
   width: 5rem;
 }
+
 .second-section-column2:after {
-  content: "";
   background-image: url(/easybank-landing-page-master/images/icon-budgeting.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -3rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 5rem;
-  width: 5rem;
 }
 .second-section-column3:after {
-  content: "";
   background-image: url(/easybank-landing-page-master/images/icon-onboarding.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -3rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 5rem;
-  width: 5rem;
 }
 
 .second-section-column4:after {
-  content: "";
   background-image: url(/easybank-landing-page-master/images/icon-api.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  top: -3rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 5rem;
-  width: 5rem;
 }
+
+.third-section-grid {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  background-color: var(--Very-Light-Gray);
+  grid-gap: 1.5rem;
+  padding-bottom: 5rem;
+}
+.article1,
+.article2,
+.article3,
+.article4 {
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+}
+.article1-img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+.article-text {
+  display: grid;
+  grid-gap: 1rem;
+  width: 90%;
+  margin: 1.5rem auto 0.9rem;
+}
+footer {
+  background-color: var(--Dark-Blue);
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  place-items: center;
+  text-align: center;
+  grid-gap: 0.5rem;
+  padding: 2rem 0;
+}
+.footerfirst {
+  display: grid;
+  grid-gap: 1.3rem;
+  width: 90%;
+  place-items: center;
+}
+.icons-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.first-list,
+.second-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+.first-list a,
+.second-list a {
+  text-decoration: none;
+  color: var(--Very-Light-Gray);
+  opacity: var(--opacity1);
+  font-weight: var(--fwm);
+  font-size: 1rem;
+}
+small {
+  display: block;
+  padding-top: 1rem;
+  color: var(--Light-Grayish-Blue);
+  opacity: var(--opacity3);
+}
+/* .footerlast {
+  border: 2px solid black;
+  display: grid;
+} */
