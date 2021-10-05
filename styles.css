@@ -140,7 +140,7 @@ p {
   font-size: 0.8rem;
   opacity: var(--opacity4);
 }
-nav {
+.new-nav {
   width: 85%;
   margin: 0 auto;
   padding: 1rem;
@@ -379,6 +379,7 @@ small {
   color: var(--Light-Grayish-Blue);
   opacity: var(--opacity3);
 }
+/* media queries start */
 @media screen and (min-width: 500px) {
   .first-section__text h1 {
     padding-top: 5rem;
@@ -394,6 +395,12 @@ small {
     display: none;
   }
   nav {
+    width: 100%;
+    position: relative;
+    background-color: white;
+    z-index: 102;
+  }
+  .new-nav {
     display: flex;
     justify-content: space-between;
     padding: 1rem auto;
@@ -446,8 +453,8 @@ small {
     background-color: var(--Very-Light-Gray);
     background-image: url(images/bg-intro-desktop.svg);
     background-repeat: no-repeat, no-repeat;
-    background-size: 55%, cover;
-    background-position: top -6.7rem right -9rem, top -17.5rem left 32rem;
+    background-size: cover;
+    background-position: top -6.7rem right -29rem;
     padding: 0rem 0 8rem;
     display: flex;
     transition: all 0.3s ease;
@@ -484,24 +491,36 @@ small {
 }
 @media screen and (min-width: 900px) {
   .first-section {
-    background-color: var(--Very-Light-Gray);
-    background-image: url(images/bg-intro-desktop.svg);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 55%, cover;
-    background-position: top -6.7rem right -9rem, top -17.5rem left 32rem;
-    padding: 0rem 0 8rem;
-    display: flex;
-    transition: all 0.3s ease;
+    background-size: cover;
+    background-position: top -17.7rem right -22rem;
+    background-position: top -6.7rem right -29rem;
     position: relative;
   }
   .first-section::after {
     content: url(images/image-mockups.png);
     position: absolute;
     top: -8rem;
-    left: 32rem;
+    left: 43rem;
     z-index: 1;
   }
-  nav {
-    margin-right: 0;
+
+  .second-section-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5.5rem;
+    padding: 5rem 0 3rem;
+    place-items: center;
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid black;
   }
 }
+@media screen and (min-width: 1100px) {
+  .first-section {
+    background-size: cover;
+    background-position: top -17.3rem right -28rem;
+    position: relative;
+  }
+}
+.second-section-column1
