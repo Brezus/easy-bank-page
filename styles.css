@@ -268,6 +268,10 @@ section {
 .second-section {
   background-color: var(--Light-Grayish-Blue);
 }
+.second-section h2 {
+  width: 200px;
+  margin: 0 auto;
+}
 .second-section-grid {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
@@ -480,6 +484,40 @@ small {
   .first-section__text p {
     max-width: 430px;
   }
+  .second-section-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5.5rem;
+    grid-template-areas:
+      "why why"
+      "col1 col2"
+      "col3 col4";
+    padding: 5rem 0 3rem;
+    place-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .second-section-intro-text {
+    grid-area: why;
+  }
+  .second-section-column1 {
+    grid-area: col1;
+  }
+  .second-section-column2 {
+    grid-area: col2;
+  }
+  .second-section-column3 {
+    grid-area: col3;
+  }
+  .second-section-column4 {
+    grid-area: col4;
+  }
+  .spacing {
+    display: grid;
+    grid-gap: 20px;
+    position: relative;
+  }
 }
 @media screen and (min-width: 800px) {
   .top-nav-button {
@@ -503,17 +541,48 @@ small {
     left: 43rem;
     z-index: 1;
   }
-
   .second-section-grid {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, auto);
     grid-gap: 5.5rem;
-    padding: 5rem 0 3rem;
+    grid-template-areas:
+      "why why why why"
+      "col1 col2 col3 col4";
+    padding: 5rem 0;
     place-items: center;
     width: 90%;
     margin: 0 auto;
+    text-align: left;
+    align-items: center;
+  }
+  .second-section-intro-text {
+    justify-self: start;
+    margin-bottom: 2rem;
+  }
+
+  .second-section h2 {
+    width: auto;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .second-section-column4 {
+    justify-self: center;
+    align-items: center;
     border: 2px solid black;
+  }
+  .second-section-column1:after,
+  .second-section-column2:after,
+  .second-section-column3:after,
+  .second-section-column4:after {
+    top: -3rem;
+    left: 17%;
+    transform: translate(-50%, -50%);
+  }
+  .spacing {
+    display: grid;
+    grid-gap: 20px;
+    position: relative;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -523,4 +592,3 @@ small {
     position: relative;
   }
 }
-.second-section-column1

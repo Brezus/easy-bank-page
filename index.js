@@ -11,3 +11,6 @@ function hamburgerClick() {
     hiddenNav.style.display = "flex";
   }
 }
+console.log(hamburgerClick.name);
+console.log(typeof hamburgerClick);
+console.log(hamburgerClick);
