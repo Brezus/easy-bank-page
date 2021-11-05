@@ -151,11 +151,16 @@ p {
   align-items: center;
   position: relative;
 }
+.logo-svg {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
 /* hamburger nav start */
 
 .hamburger {
   cursor: pointer;
   overflow: hidden;
+  opacity: 0;
 }
 .hamburger div {
   height: 2px;
@@ -185,7 +190,6 @@ p {
   left: 50%;
   top: 13.8rem;
   transform: translate(-50%, -50%);
-  display: flex;
   display: none;
   border-radius: 5px;
   z-index: 2;
@@ -268,9 +272,12 @@ section {
 .second-section {
   background-color: var(--Light-Grayish-Blue);
 }
+.second-section-intro-text {
+  margin-bottom: 2rem;
+}
 .second-section h2 {
   width: 200px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 .second-section-grid {
   display: grid;
@@ -316,7 +323,7 @@ section {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   background-color: var(--Very-Light-Gray);
-  grid-gap: 1.5rem;
+  gap: 1.5rem;
   padding-bottom: 5rem;
 }
 .article1,
@@ -493,9 +500,9 @@ small {
       "why why"
       "col1 col2"
       "col3 col4";
-    padding: 5rem 0 3rem;
+    padding: 8rem 0 3rem;
     place-items: center;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
   }
   .second-section-intro-text {
@@ -518,6 +525,20 @@ small {
     grid-gap: 20px;
     position: relative;
   }
+  section:last-child {
+    background-color: var(--Very-Light-Gray);
+  }
+  .third-section-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .third-section-grid {
+    grid-template-rows: 1fr;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .article-text {
+    padding-bottom: 1rem;
+  }
 }
 @media screen and (min-width: 800px) {
   .top-nav-button {
@@ -525,6 +546,50 @@ small {
     padding: 0.7rem 1.5rem;
     color: var(--Very-Light-Gray);
     font-size: 0.9rem;
+  }
+  .footer-wrap {
+    background-color: var(--Dark-Blue);
+  }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: start;
+    text-align: left;
+    justify-items: start;
+    column-gap: 2rem;
+    row-gap: 3rem;
+    padding: 2rem 0 0rem;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .footerfirst {
+    display: grid;
+    grid-gap: 1.3rem;
+    width: 90%;
+    place-items: center;
+    justify-content: start;
+  }
+  .icons-cont {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0.8rem 0;
+  }
+
+  .first-list {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .second-list {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  small {
+    display: block;
+    padding-top: 1rem;
+    color: var(--Light-Grayish-Blue);
+    opacity: var(--opacity3);
   }
 }
 @media screen and (min-width: 900px) {
@@ -549,16 +614,16 @@ small {
     grid-template-areas:
       "why why why why"
       "col1 col2 col3 col4";
-    padding: 5rem 0;
+    padding: 8rem 0 6rem;
     place-items: center;
-    width: 90%;
     margin: 0 auto;
     text-align: left;
     align-items: center;
   }
-  .second-section-intro-text {
+
+  .third-section-grid .second-section-intro-text {
     justify-self: start;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   .second-section h2 {
@@ -566,11 +631,7 @@ small {
     margin: 0;
     margin-bottom: 1rem;
   }
-  .second-section-column4 {
-    justify-self: center;
-    align-items: center;
-    border: 2px solid black;
-  }
+
   .second-section-column1:after,
   .second-section-column2:after,
   .second-section-column3:after,
@@ -578,11 +639,30 @@ small {
     top: -3rem;
     left: 17%;
     transform: translate(-50%, -50%);
+    position: absolute;
   }
   .spacing {
     display: grid;
-    grid-gap: 20px;
     position: relative;
+    align-self: start;
+  }
+  .article1-img {
+    height: 40%;
+  }
+  .third-section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: 32rem;
+  }
+  .third-section-h3 {
+    text-align: left;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .article1,
+  .article2,
+  .article3,
+  .article4 {
+    width: 100%;
   }
 }
 @media screen and (min-width: 1100px) {
