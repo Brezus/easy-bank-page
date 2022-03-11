@@ -5,11 +5,11 @@ gsap.to(
   { duration: 1, x: 0, opacity: 1, ease: "back.out(1.4)" },
   "+=0.1"
 );
+const hiddenNav = document.getElementById("nav-ul");
+const hamburger = document.getElementById("hamburger-icon");
+const bgDisappear = document.getElementById("first-section");
 
 function hamburgerClick() {
-  let hamburger = document.getElementById("hamburger-icon");
-  let hiddenNav = document.getElementById("nav-ul");
-  let bgDisappear = document.getElementById("first-section");
   bgDisappear.classList.toggle("first-section-dark-gradient");
   hamburger.classList.toggle("change");
   if (hiddenNav.style.display === "flex") {
@@ -18,6 +18,13 @@ function hamburgerClick() {
     hiddenNav.style.display = "flex";
   }
 }
-console.log(hamburgerClick.name);
-console.log(typeof hamburgerClick);
-console.log(hamburgerClick);
+
+hiddenNav.addEventListener("click", (e) => {
+  let target = e.target.closest("a");
+  if (target) {
+    bgDisappear.classList.remove("first-section-dark-gradient");
+    hamburger.classList.remove("change");
+    hiddenNav.style.display = "none";
+  }
+  return;
+});
